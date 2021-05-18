@@ -40,7 +40,7 @@ def get_weather_data(weather_type):
     return sun_json
 
 
-## This function just retrieves the solar insolation forecast for a specified
+## This function just retrieves the solar insolation forecast for a specified.
 ## amount of hours in the future
 def get_solar_radiation_from_hour(sun_json_data, hours_in_future):
     value = sun_json_data[hours_in_future]['surface_shortwave_radiation']['value']
