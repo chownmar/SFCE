@@ -113,12 +113,13 @@ def get_temp_from_time(temp_json_data, day_of_month, hour):
 
 
 ## This function estimates the power produced by the array based on the temp 
-## and solar insolation. The surface area of a 10kW array is 60 m^2
+## and solar insolation. The surface area of 10kW of cells is 49.5 m^2
 def get_power(radiation, temp):
-    efficiency = 0.22
-    surface_area = 60 ##m^2
+    cell_efficiency = 0.1805
+    cell_surface_area = 49.5 ##m^2
+    derate_factor = 0.722
     
-    power = efficiency * surface_area * radiation * (1 - (0.05 * (temp - 25)))
+    power = derate_factor * cell_efficiency * cell_surface_area * radiation * (1 - (0.05 * (temp - 25)))
     return power
   
 
